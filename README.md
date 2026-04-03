@@ -1,8 +1,3 @@
-Este es el archivo **README.md** que debes incluir en la raíz de tu proyecto. Está diseñado para que se vea profesional en GitHub y cumpla con lo que los profesores de la **UPTC** esperan ver en un proyecto de ingeniería.
-
-Crea un archivo llamado `README.md` y pega lo siguiente:
-
----
 
 # ✈️ Simulación de Aeropuerto Inteligente - Sistemas Operativos
 
@@ -60,10 +55,6 @@ Para evitar interbloqueos, el sistema implementa una **estrategia de orden globa
 
 ## 👥 Autores
 * **Camilo Rodriguez** - *Sistemas Operativos - UPTC*
-* **[Nombre de tu compañero]** - *Sistemas Operativos - UPTC*
+* **Cristian Eslava** - *Sistemas Operativos - UPTC*
 
 ---
-
-### Tip para tu entrega:
-Si quieres que el README se vea aún mejor en GitHub, puedes adjuntar una captura de pantalla de la interfaz funcionando debajo de la sección de "Características" usando la sintaxis:
-`![Simulación](ruta/de/tu/imagen.png)`
