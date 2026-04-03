@@ -1,0 +1,226 @@
+/*
+ * ═══════════════════════════════════════════════════════════
+ * Estilos del Aeropuerto Inteligente — Tema "Torre de Control"
+ * ═══════════════════════════════════════════════════════════
+ * Tema oscuro con acentos neón (verde cian) inspirado en
+ * pantallas de radar y terminales de control aéreo.
+ */
+
+/* ─── RAÍZ ─── */
+.root-pane {
+    -fx-background-color: #0a0e27;
+}
+
+/* ─── TOOLBAR (barra superior) ─── */
+.toolbar {
+    -fx-background-color: linear-gradient(to right, #0d1137, #1a1a4e);
+    -fx-border-color: #64ffda;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(100, 255, 218, 0.2), 10, 0, 0, 3);
+}
+
+.toolbar-title {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64ffda;
+    -fx-effect: dropshadow(gaussian, rgba(100, 255, 218, 0.5), 5, 0, 0, 0);
+}
+
+/* ─── BOTONES ─── */
+.btn-primary, .btn-secondary, .btn-warning, .btn-danger, .btn-neutral {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #2ecc71, #27ae60);
+    -fx-text-fill: white;
+    -fx-border-color: #2ecc71;
+    -fx-border-width: 1;
+}
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #3ddc84, #2ecc71);
+    -fx-effect: dropshadow(gaussian, rgba(46, 204, 113, 0.5), 10, 0, 0, 0);
+}
+
+.btn-secondary {
+    -fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+    -fx-text-fill: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1;
+}
+.btn-secondary:hover {
+    -fx-background-color: linear-gradient(to bottom, #5dade2, #3498db);
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.5), 10, 0, 0, 0);
+}
+
+.btn-warning {
+    -fx-background-color: linear-gradient(to bottom, #f39c12, #e67e22);
+    -fx-text-fill: white;
+    -fx-border-color: #f39c12;
+    -fx-border-width: 1;
+}
+.btn-warning:hover {
+    -fx-background-color: linear-gradient(to bottom, #f1c40f, #f39c12);
+    -fx-effect: dropshadow(gaussian, rgba(243, 156, 18, 0.5), 10, 0, 0, 0);
+}
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #e74c3c, #c0392b);
+    -fx-text-fill: white;
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1;
+}
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff6b6b, #e74c3c);
+    -fx-effect: dropshadow(gaussian, rgba(231, 76, 60, 0.5), 10, 0, 0, 0);
+}
+
+.btn-neutral {
+    -fx-background-color: linear-gradient(to bottom, #636e72, #2d3436);
+    -fx-text-fill: #dfe6e9;
+    -fx-border-color: #636e72;
+    -fx-border-width: 1;
+}
+.btn-neutral:hover {
+    -fx-background-color: linear-gradient(to bottom, #74b9ff, #636e72);
+    -fx-effect: dropshadow(gaussian, rgba(116, 185, 255, 0.4), 10, 0, 0, 0);
+}
+
+/* ─── CANVAS CONTAINER ─── */
+.canvas-container {
+    -fx-background-color: #0a0e27;
+    -fx-border-color: #1a1a4e;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* ─── PANEL DE ESTADÍSTICAS ─── */
+.stats-panel {
+    -fx-background-color: linear-gradient(to bottom, #0d1137, #0a0e27);
+    -fx-border-color: #1a1a4e;
+    -fx-border-width: 0 0 0 1;
+}
+
+.stats-title {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64ffda;
+}
+
+.stat-label {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 14px;
+    -fx-text-fill: #ccd6f6;
+    -fx-padding: 5 10;
+    -fx-background-color: rgba(26, 26, 78, 0.5);
+    -fx-background-radius: 5;
+}
+
+.leyenda-title {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+    -fx-text-fill: #8892b0;
+    -fx-padding: 5 0 3 0;
+}
+
+.leyenda-text {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 11px;
+    -fx-text-fill: #a8b2d1;
+}
+
+.sync-info {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 11px;
+    -fx-text-fill: #64ffda;
+    -fx-padding: 8;
+    -fx-background-color: rgba(100, 255, 218, 0.08);
+    -fx-background-radius: 5;
+    -fx-border-color: rgba(100, 255, 218, 0.2);
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+}
+
+/* ─── SEPARADORES ─── */
+.separator .line {
+    -fx-border-color: #1a1a4e;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ─── LOG PANEL ─── */
+.log-panel {
+    -fx-background-color: #0d1137;
+    -fx-border-color: #64ffda;
+    -fx-border-width: 1 0 0 0;
+}
+
+.log-title {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64ffda;
+}
+
+.log-list {
+    -fx-background-color: #080b1e;
+    -fx-border-color: #1a1a4e;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.log-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #00e5ff;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 11px;
+    -fx-padding: 2 8;
+}
+
+.log-list .list-cell:odd {
+    -fx-background-color: rgba(26, 26, 78, 0.3);
+}
+
+.log-list .list-cell:selected {
+    -fx-background-color: rgba(100, 255, 218, 0.15);
+    -fx-text-fill: #64ffda;
+}
+
+/* ScrollBar estilizado para el log */
+.log-list .scroll-bar:vertical {
+    -fx-background-color: #0a0e27;
+    -fx-pref-width: 8;
+}
+
+.log-list .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(100, 255, 218, 0.3);
+    -fx-background-radius: 4;
+}
+
+.log-list .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(100, 255, 218, 0.5);
+}
+
+.log-list .scroll-bar:vertical .increment-button,
+.log-list .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0;
+}
+
+.log-list .scroll-bar:vertical .increment-arrow,
+.log-list .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-pref-height: 0;
+}
+
+/* Virtual flow placeholder */
+.log-list .virtual-flow .corner {
+    -fx-background-color: transparent;
+}

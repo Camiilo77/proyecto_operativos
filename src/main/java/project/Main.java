@@ -1,51 +1,27 @@
 package project;
 
-import project.controller.Aeropuerto;
-import project.model.Avion;
-import project.view.InterfazAeropuerto;
+import javafx.application.Application;
+import project.view.AeropuertoApp;
 
 /**
- * Clase principal que actúa como el orquestador del sistema.
- * Su función es inicializar los componentes y lanzar la simulación.
+ * Clase principal que actúa como punto de entrada del sistema.
+ * Lanza la aplicación JavaFX que contiene toda la simulación.
+ * 
+ * La arquitectura del proyecto sigue el patrón MVC:
+ * - Model:      Avion, Pista, PuertaEmbarque, EstadoAvion, EventoLog
+ * - View:       AeropuertoApp (JavaFX)
+ * - Controller: Aeropuerto, RegistroEventos, SimuladorCondicionesCarrera, DetectorDeadlock
+ * 
+ * Mecanismos de concurrencia utilizados:
+ * - java.lang.Thread: Cada avión es un hilo independiente
+ * - java.util.concurrent.Semaphore: Binario (pistas) y de conteo (puertas)
+ * - java.util.concurrent.locks.ReentrantLock: Protección de asignación de recursos
  */
 public class Main {
     public static void main(String[] args) {
-        // DEFINICIÓN DE RECURSOS LIMITADOS
-        // Establecemos cuántas puertas de embarque tendrá el aeropuerto.
-        // Esto alimentará los semáforos de conteo.
-        int puertasConfig = 3; 
-
-        // INICIALIZACIÓN DE COMPONENTES
-        // Creamos el controlador (Aeropuerto) que gestiona la lógica de los semáforos.
-        Aeropuerto aero = new Aeropuerto(puertasConfig);
-        
-        // Creamos la vista (Interfaz) para la visualización gráfica de los procesos.
-        InterfazAeropuerto vista = new InterfazAeropuerto(puertasConfig);
-        
-        // VINCULACIÓN
-        // Conectamos el controlador con la interfaz para que los hilos puedan 
-        // enviar actualizaciones visuales en tiempo real.
-        aero.setGui(vista);
-        
-        // Hacemos visible la ventana de Swing.
-        vista.setVisible(true);
-
-        // LANZAMIENTO DE PROCESOS CONCURRENTES
-        // Simulamos la llegada de 8 aviones (hilos independientes).
-        // Al haber solo 3 puertas, aquí es donde se pondrá a prueba la exclusión mutua
-        // y la sincronización: los últimos aviones deberán esperar a que los primeros liberen recursos.
-        for (int i = 1; i <= 8; i++) {
-            // Creamos e iniciamos cada hilo de Avion.
-            // El método .start() es el que le indica a la JVM que ejecute el método run() de forma asíncrona.
-            new Avion("Avión-" + i, aero).start();
-            
-            try { 
-                // Pequeño retardo entre la creación de cada avión para simular
-                // llegadas escalonadas en el tiempo.
-                Thread.sleep(500); 
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        // Lanzar la aplicación JavaFX
+        // El método launch() inicia el ciclo de vida de JavaFX:
+        // 1. init() → 2. start(Stage) → 3. stop()
+        Application.launch(AeropuertoApp.class, args);
     }
 }
