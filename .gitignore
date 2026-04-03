@@ -1,0 +1,18 @@
+# Maven - Ignorar la carpeta de compilación
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
+.project
+.classpath
+
+# VS Code
+.vscode/
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
